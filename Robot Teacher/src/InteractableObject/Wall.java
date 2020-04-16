@@ -1,17 +1,17 @@
 package InteractableObject;
 
-import Game.GameFunctions;
+import Game.IGameFunctions;
 
 public class Wall extends InteractableObject {
-    GameFunctions gameFunctions;
+    IGameFunctions IGameFunctions;
 
     @Override
     public void interact() {
-        gameFunctions.failure();
+        IGameFunctions.failure();
     }
 
     @Override
     public void sit() {
-        gameFunctions.failure();
+        IGameFunctions.failure();
     }
 }

@@ -1,19 +1,19 @@
 package InteractableObject.Chair;
-import Game.GameFunctions;
+import Game.IGameFunctions;
 import InteractableObject.*;
 
 public class Chair extends InteractableObject {
 
-    GameFunctions gameFunctions;
+    IGameFunctions IGameFunctions;
 
     @Override
     public void interact() {
-        gameFunctions.failure();
+        IGameFunctions.failure();
 
     }
 
     @Override
     public void sit() {
-        gameFunctions.victory();
+        IGameFunctions.victory();
     }
 }

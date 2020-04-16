@@ -1,14 +1,23 @@
 package Game;
 
-import Commands.CommandToRobotGetCoordinates;
-import Commands.CommandToRobotPushCoordinates;
-import Robot.*;
+import Commands.ICommandToRobotGetCoordinates;
+import Commands.ICommandToRobotPushCoordinates;
+import InteractableObject.InteractableObject;
+import InteractableObject.Robot.*;
 import java.awt.Point;
 
 
-abstract class GameState implements CommandToRobotPushCoordinates, CommandToRobotGetCoordinates, GameFunctions, GetObjectFromBoard, GetSizeOfGrid, Update {
-    Object[][] board;
-    ErrorChecker errorChecker;
+abstract class GameState implements ICommandToRobotPushCoordinates, ICommandToRobotGetCoordinates, IGameFunctions, IGetObjectFromBoard, IGetSizeOfGrid, IUpdate {
+    public InteractableObject[][] getBoard() {
+        return board;
+    }
+
+    public void setBoard(InteractableObject[][] board) {
+        this.board = board;
+    }
+
+    private InteractableObject[][] board;
+
 
     @Override
     abstract public void victory();

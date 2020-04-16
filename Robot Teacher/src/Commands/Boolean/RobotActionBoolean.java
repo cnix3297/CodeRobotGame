@@ -1,6 +1,6 @@
 package Commands.Boolean;
 
-import Robot.MessengerToCommand;
+import InteractableObject.Robot.IMessengerToCommand;
 
 public enum RobotActionBoolean {
     isChair("isChair"),
@@ -12,12 +12,11 @@ public enum RobotActionBoolean {
     RobotActionBoolean(String isWall) {
     }
 
-    MessengerToCommand messengerToCommand;
+    IMessengerToCommand IMessengerToCommand;
     public boolean getIsTrue(){
-
         switch (value){
-            case "isChair": return messengerToCommand.triggerIsChair();
-            case "isWall" : return messengerToCommand.triggerIsWall();
+            case "isChair": return IMessengerToCommand.triggerIsChair();
+            case "isWall" : return IMessengerToCommand.triggerIsWall();
             default: return false;
         }
     }
